@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GlyphPass</title>
+  <style>
+
+    body {
+      padding: 0px;
+      margin: 0px;
+      min-width: 300px;
+    }
+
+    .triptych-left {
+      position: absolute;
+      box-sizing: border-box;
+      width: 10vw;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+      background-color: #6AF;
+      min-width: 100px;
+      z-index: 2;
+    }
+
+    .triptych-right {
+      position: absolute;
+      box-sizing: border-box;
+      width: 10vw;
+      height: 100%;
+      right: 0px;
+      top: 0px;
+      background-color: #6AF;
+      min-width: 100px;
+      z-index: 2;
+    }
+
+    .triptych-mid {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #FFF;
+    }
+
+    .popup_x {
+      height: 20px;
+      background-color: #FFF;
+      color: #000;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 5px;
+    }
+
+    .popup_x:hover {
+      background-color: #EEF;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .popup {
+      margin-left: auto;
+      margin-right: auto;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0px;
+      top: 30%;
+      height: 200px;
+      width: 400px;
+      box-sizing: border-box;
+      background-color: #6AF;
+      z-index: 10;
+      position: fixed;
+    }
+
+    .icontable {
+      margin-left: auto;
+      margin-right: auto;
+      vertical-align: middle;
+      text-align: center;
+      padding: 0px;
+      height: 400px;
+      width: 400px;
+      box-sizing: border-box;
+    }
+
+    .icontable td {
+      background-color: #EEE;
+      border: 1px solid #CCC;
+      margin: 0px;
+      height: 66px;
+      width: 66px;
+    }
+
+    .icontable img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .icontable td:hover {
+      background-color: #FFF;
+    }
+
+    .icontable td:active {
+      background-color: #6AF;
+    }
+
+    .setbutton {
+      font-weight: bold;
+    }
+
+    .histdiv {
+    }
+
+    .histimg {
+      width: 40px;
+      height: 40px;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    .imglist {
+      height: 400px;
+      border: 1px solid #000;
+    }
+
+    .selected {
+      background-color: #F00;
+    }
+
+    .output {
+    }
+
+    .gear {
+      background-color: #FFF;
+    }
+    .gear:hover {
+      background-color: #CCC;
+    }
+
+    td[class="glyph"] { prototype: MyGlyph; }
+  </style>
+  <script type="text/tiscript">
+    self.ready = function(){
+    view.isResizeable = false
+    }
+
+    class MyGlyph: Behavior {
+      function onClick() { view.addGlyph(this.id , setHistory); }
+    }
+  </script>
+</head>
+<body>
+  <div class="triptych-left">
+    <center>Icon Sets</center>
+    <center><button class="setbutton selected" id="basicset">BASIC</button></center>
+    <center><button class="setbutton" id="abstractset">ABSTRACT</button></center>
+  </div>
+
+    <table class="icontable">
+      <tr id="r1">
+        <td class="glyph" id="1x1"><img src="iconsets/basic/1x1.png"/></td>
+        <td class="glyph" id="1x2"><img src="iconsets/basic/1x2.png"/></td>
+        <td class="glyph" id="1x3"><img src="iconsets/basic/1x3.png"/></td>
+        <td class="glyph" id="1x4"><img src="iconsets/basic/1x4.png"/></td>
+        <td class="glyph" id="1x5"><img src="iconsets/basic/1x5.png"/></td>
+        <td class="glyph" id="1x6"><img src="iconsets/basic/1x6.png"/></td>
+      </tr>
+      <tr id="r2">
+        <td class="glyph" id="2x1"><img src="iconsets/basic/2x1.png"/></td>
+        <td class="glyph" id="2x2"><img src="iconsets/basic/2x2.png"/></td>
+        <td class="glyph" id="2x3"><img src="iconsets/basic/2x3.png"/></td>
+        <td class="glyph" id="2x4"><img src="iconsets/basic/2x4.png"/></td>
+        <td class="glyph" id="2x5"><img src="iconsets/basic/2x5.png"/></td>
+        <td class="glyph" id="2x6"><img src="iconsets/basic/2x6.png"/></td>
+      </tr>
+      <tr id="r3">
+        <td class="glyph" id="3x1"><img src="iconsets/basic/3x1.png"/></td>
+        <td class="glyph" id="3x2"><img src="iconsets/basic/3x2.png"/></td>
+        <td class="glyph" id="3x3"><img src="iconsets/basic/3x3.png"/></td>
+        <td class="glyph" id="3x4"><img src="iconsets/basic/3x4.png"/></td>
+        <td class="glyph" id="3x5"><img src="iconsets/basic/3x5.png"/></td>
+        <td class="glyph" id="3x6"><img src="iconsets/basic/3x6.png"/></td>
+      </tr>
+      <tr id="r4">
+        <td class="glyph" id="4x1"><img src="iconsets/basic/4x1.png"/></td>
+        <td class="glyph" id="4x2"><img src="iconsets/basic/4x2.png"/></td>
+        <td class="glyph" id="4x3"><img src="iconsets/basic/4x3.png"/></td>
+        <td class="glyph" id="4x4"><img src="iconsets/basic/4x4.png"/></td>
+        <td class="glyph" id="4x5"><img src="iconsets/basic/4x5.png"/></td>
+        <td class="glyph" id="4x6"><img src="iconsets/basic/4x6.png"/></td>
+      </tr>
+      <tr id="r5">
+        <td class="glyph" id="5x1"><img src="iconsets/basic/5x1.png"/></td>
+        <td class="glyph" id="5x2"><img src="iconsets/basic/5x2.png"/></td>
+        <td class="glyph" id="5x3"><img src="iconsets/basic/5x3.png"/></td>
+        <td class="glyph" id="5x4"><img src="iconsets/basic/5x4.png"/></td>
+        <td class="glyph" id="5x5"><img src="iconsets/basic/5x5.png"/></td>
+        <td class="glyph" id="5x6"><img src="iconsets/basic/5x6.png"/></td>
+      </tr>
+      <tr id="r6">
+        <td class="glyph" id="6x1"><img src="iconsets/basic/6x1.png"/></td>
+        <td class="glyph" id="6x2"><img src="iconsets/basic/6x2.png"/></td>
+        <td class="glyph" id="6x3"><img src="iconsets/basic/6x3.png"/></td>
+        <td class="glyph" id="6x4"><img src="iconsets/basic/6x4.png"/></td>
+        <td class="glyph" id="6x5"><img src="iconsets/basic/6x5.png"/></td>
+        <td class="glyph" id="6x6"><img src="iconsets/basic/6x6.png"/></td>
+      </tr>
+    </table>
+    <img src="iconsets/abstract/5x4.png" id="gear" style="top: 0px; left: 80vw; position: fixed; width: 50px;">
+
+  <div class="triptych-right">
+    <center>History</center>
+    <div class="imglist">
+      <div class="histdiv" id="img1"></div>
+      <div class="histdiv" id="img2"></div>
+      <div class="histdiv" id="img3"></div>
+      <div class="histdiv" id="img4"></div>
+      <div class="histdiv" id="img5"></div>
+      <div class="histdiv" id="img6"></div>
+      <div class="histdiv" id="img7"></div>
+      <div class="histdiv" id="img8"></div>
+      <div class="histdiv" id="img9"></div>
+      <div class="histdiv" id="img10"></div>
+    </div>
+    <center><button id="clearbutton">Clear</button><br>
+            <button id="genbutton">Generate</button></center>
+  </div>
+
+  <div class="popup" id="popup">
+    <b>Welcome to GlyphPass</b><br/>
+    To begin, click the Gear and enter a passphrase.<br/>A passphrase is a short word of 10 characters or less that identifies you. Make it something memorable, as your passwords will depend on it.<br/>Next, click Glyphs to add them, then click Generate.
+    <div class="popup_x" id="mainbox">Close</div>
+  </div>
+
+  <div class="popup hidden" id="options">
+    <b>Passphrase (10 characters or less)</b><br/>
+    <input type="text" id="passphrase" size="10" maxlength="10"/>
+    <div class="popup_x" id="opx">Done</div>
+  </div>
+
+  <div class="popup hidden" id="passbox">
+    <textarea class="output" id="generatepass" cols="30" rows="6" wrap=hard readonly></textarea>
+    <div class="popup_x" id="copyx">Copy to Clipboard</div>
+    <div class="popup_x" id="passx">Done</div>
+  </div>
+
+  <script type="text/tiscript">
+    var root = self;
+
+    function setHistory(link1,link2,link3,link4,link5,link6,link7,link8,link9,link10){
+        root.$(#img1).html = link1;
+        root.$(#img2).html = link2;
+        root.$(#img3).html = link3;
+        root.$(#img4).html = link4;
+        root.$(#img5).html = link5;
+        root.$(#img6).html = link6;
+        root.$(#img7).html = link7;
+        root.$(#img8).html = link8;
+        root.$(#img9).html = link9;
+        root.$(#img10).html = link10;
+    }
+
+    function showPassword(pass,err) {
+      if(err != ""){
+        view.msgbox(#information,err);
+      }
+      else {
+        $(#generatepass).value = pass;
+        self.$(#passbox).attributes.removeClass("hidden");
+      }
+    }
+
+    self.$(#basicset).on("click",function(){
+      this.attributes.addClass("selected");
+      self.$(#abstractset).attributes.removeClass("selected");
+      for( var i in root.selectAll(".glyph")){
+        i.html = "<img src=\"iconsets/" + "basic" + "/" + i.id + ".png\">";
+      }
+      view.changeSet("basic");
+      view.clearGlyphs(setHistory);
+      $(#generatepass).value = "";
+    });
+
+    self.$(#abstractset).on("click",function(){
+      this.attributes.addClass("selected");
+      self.$(#basicset).attributes.removeClass("selected");
+      for( var i in root.selectAll(".glyph")){
+        i.html = "<img src=\"iconsets/" + "abstract" + "/" + i.id + ".png\">";
+      }
+      view.changeSet("abstract");
+      view.clearGlyphs(setHistory);
+      $(#generatepass).value = "";
+    });
+
+    self.$(#passx).on("click",function(){
+      self.$(#passbox).attributes.addClass("hidden");
+    });
+
+    self.$(#copyx).on("click",function(){
+      view.copyClip( self.$(#generatepass).value );
+    });
+
+    self.$(#mainbox).on("click",function(){
+      self.$(#popup).attributes.addClass("hidden");
+    });
+
+
+    self.$(#gear).on("click",function(){
+      self.$(#options).attributes.removeClass("hidden");
+    });
+
+    self.$(#opx).on("click",function(){
+      self.$(#options).attributes.addClass("hidden");
+    });
+
+    self.$(#clearbutton).on("click",function(){
+      view.clearGlyphs(setHistory);
+    });
+
+    self.$(#genbutton).on("click",function(){
+      view.generatePass($(#passphrase).value,showPassword);
+    });
+
+  </script>
+</body>
+</html>
