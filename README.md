@@ -1,7 +1,7 @@
 ![glyphpass](https://cloud.githubusercontent.com/assets/2739674/20878766/a072b212-ba9e-11e6-9e0b-42c7b689c988.png)
 
 # GlyphPass
-A graphical password system for creating passwords that are easier to remember and harder to guess.
+A graphical password system for creating passwords that are easier to remember and harder to guess. Created as part of a group project during Software Design class.
 
 ![image](https://cloud.githubusercontent.com/assets/2739674/20878781/b49b7daa-ba9e-11e6-857d-b7ebf940d838.png)
 
